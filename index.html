@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f2f3f5" />
+    <meta
+      name="description"
+      content="PastureBot — быстрый справочник команд Telegram-бота."
+    />
+    <title>PastureBot — справочник команд</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <div class="hero-count"><strong id="command-count">0</strong><span>команд доступно</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="catalog container" id="commands">
+        <div class="catalog-toolbar">
+          <h1>Команды</h1>
+          <label class="search">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="search-input" type="search" placeholder="Поиск команды..." autocomplete="off" />
+            <kbd>/</kbd>
+          </label>
+        </div>
+
+        <div class="results-meta"><span id="results-count">0 результатов</span></div>
+        <div class="command-grid" id="command-grid"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <span>⌕</span>
+          <h3>Ничего не найдено</h3>
+          <p>Попробуйте другой запрос или сбросьте фильтр.</p>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">Команда скопирована</div>
+    <script src="./app.js"></script>
+  </body>
+</html>
